@@ -108,19 +108,19 @@ $greeting = $roleGreetings[$userRole] ?? 'Welcome!';
         <h2>Precious Memories 📸</h2>
         <div class="gallery-container">
             <div class="gallery-item">
-                <img src="photos/1.jpeg" alt="Precious Memory 1" loading="lazy">
+                <img src="1.jpeg" alt="Precious Memory 1" loading="lazy">
                 <p>Your favorite photo</p>
             </div>
             <div class="gallery-item">
-                <img src="photos/2.jpeg" alt="Faith & Grace" loading="lazy">
+                <img src="2.jpeg" alt="Faith & Grace" loading="lazy">
                 <p>God's blessing in your life</p>
             </div>
             <div class="gallery-item">
-                <img src="photos/3.jpeg" alt="Cherished Moments" loading="lazy">
+                <img src="3.jpeg" alt="Cherished Moments" loading="lazy">
                 <p>Beautiful memories with loved ones</p>
             </div>
             <div class="gallery-item">
-                <img src="photos/4.jpeg" alt="New Beginnings" loading="lazy">
+                <img src="4.jpeg" alt="New Beginnings" loading="lazy">
                 <p>Another year of blessings</p>
             </div>
         </div>
