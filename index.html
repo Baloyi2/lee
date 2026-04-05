@@ -1,1 +1,257 @@
 
+
+// Define role-specific content
+$roleTitles = [
+   'admin' => 'Admin Dashboard 👑',
+   'admin' => 'Admin Dashboard 👑',
+    'joy' => 'Your Special Day, Joy! 🎂',
+    'guest' => 'Happy Birthday Joy! 🎉'
+];
+
+$roleGreetings = [
+    'admin' => 'Welcome back, Admin! 👑',
+    'joy' => 'Happy Birthday, Precious Joy! 💖',
+    'guest' => 'Welcome to Joy\'s Birthday Celebration! 🎈'
+];
+$pageTitle = $roleTitles[$userRole] ?? 'Happy Birthday Joy! 🎉';
+    'admin' => 'Welcome back, Admin! 👑',
+    'joy' => 'Happy Birthday, Precious Joy! 💖',
+    'guest' => 'Welcome to Joy\'s Birthday Celebration! 🎈'
+];
+$pageTitle = $roleTitles[$userRole] ?? 'Happy Birthday Joy! 🎉';
+$greeting = $roleGreetings[$userRole] ?? 'Welcome!';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#8B4EA8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+    <title><?php echo $pageTitle; ?></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+@@ -45,7 +45,7 @@
+            <div class="hero-copy">
+                <span class="eyebrow">Birthday Celebration</span>
+                <h1><?php echo $greeting; ?></h1>
+                <p class="hero-subtitle">A warm celebration for Precious Lethabo Mateta, filled with memories, love, and blessings.</p>
+                <p class="hero-subtitle">A warm celebration for Precious Lethabo Mateta, filled with memories, love, and blessings.</p>
+                <div class="hero-actions">
+                    <?php if ($userRole === 'joy'): ?>
+                    <button class="btn btn-play" onclick="playSong()">🎵 Play "Birthday Song" by Eric Lloyd</button>
+@@ -60,7 +60,7 @@
+                    <div class="hero-avatar">J</div>
+                    <div class="hero-profile-text">
+                        <p class="hero-name">Precious Lethabo Mateta</p>
+                        <p class="hero-role">Beloved friend • April 27 birthday</p>
+                        <p class="hero-role">Beloved friend • April 27 birthday</p>
+                    </div>
+                </div>
+                <div class="countdown-container">
+@@ -105,29 +105,29 @@
+    <?php if ($userRole !== 'guest'): ?>
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="tab-content active">
+        <h2>Precious Memories 📸</h2>
+        <h2>Precious Memories 📸</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="photos/1.jpeg" alt="Precious Memory 1" loading="lazy">
+                <img src="1.jpeg" alt="Precious Memory 1" loading="lazy">
+                <p>Your favorite photo</p>
+            </div>
+            <div class="gallery-item">
+                <img src="photos/2.jpeg" alt="Faith & Grace" loading="lazy">
+                <img src="2.jpeg" alt="Faith & Grace" loading="lazy">
+                <p>God's blessing in your life</p>
+            </div>
+            <div class="gallery-item">
+                <img src="photos/3.jpeg" alt="Cherished Moments" loading="lazy">
+                <img src="3.jpeg" alt="Cherished Moments" loading="lazy">
+                <p>Beautiful memories with loved ones</p>
+            </div>
+            <div class="gallery-item">
+                <img src="photos/4.jpeg" alt="New Beginnings" loading="lazy">
+                <img src="4.jpeg" alt="New Beginnings" loading="lazy">
+                <p>Another year of blessings</p>
+            </div>
+        </div>
+
+        <?php if ($userRole === 'joy'): ?>
+        <div style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px;">
+            <h3>📸 Friends' Photos</h3>
+            <h3>📸 Friends' Photos</h3>
+            <div id="friendsPhotoPosts" class="friends-posts">
+                <!-- Guest photos will appear here -->
+            </div>
+@@ -139,33 +139,33 @@
+    <?php if ($userRole === 'guest'): ?>
+    <!-- Messages & Wishes Section -->
+    <section id="messages" class="tab-content active">
+        <h2>Birthday Wishes 💖</h2>
+        <h2>Birthday Wishes 💖</h2>
+
+        <div class="wish-input">
+            <textarea id="wishText" placeholder="Write a special message for Joy..." maxlength="500"></textarea>
+            <input type="text" id="wishName" placeholder="Your name (required)" maxlength="50" required>
+            <button class="btn btn-primary" onclick="addWish()">Send Wish 💌</button>
+            <button class="btn btn-primary" onclick="addWish()">Send Wish 💌</button>
+        </div>
+
+        <div class="wishes-display" id="wishesDisplay">
+            <!-- Wishes will appear here -->
+        </div>
+
+        <div class="guest-features">
+            <h3>🎁 Gift Ideas for Joy</h3>
+            <h3>🎁 Gift Ideas for Joy</h3>
+            <div class="category-actions">
+                <button class="btn btn-secondary" onclick="generateGiftIdea()">Get a gift idea</button>
+                <p id="giftIdea" class="special-note">Need inspiration for Joy? Tap the button to reveal a thoughtful suggestion.</p>
+            </div>
+        </div>
+
+        <div class="guest-features">
+            <h3>📸 Share Your Photos and Wishes</h3>
+            <h3>📸 Share Your Photos and Wishes</h3>
+            <p class="photo-note">Upload a photo. Your post can be updated or deleted within 5 days.</p>
+            <div class="photo-upload">
+                <input type="file" id="photoInput" accept="image/*" onchange="previewPhoto(event)">
+                <label for="photoInput" class="upload-label">📷 Click to Add Photos</label>
+                <button class="btn btn-primary" onclick="uploadPhotoWithWish()">📤 Share Photo</button>
+                <label for="photoInput" class="upload-label">📷 Click to Add Photos</label>
+                <button class="btn btn-primary" onclick="uploadPhotoWithWish()">📤 Share Photo</button>
+                <div id="photoPreview" class="photo-preview"></div>
+            </div>
+            <div id="myPhotoPosts" class="my-posts"></div>
+@@ -176,7 +176,7 @@
+    <?php if ($userRole === 'joy'): ?>
+    <!-- Messages from Friends Section -->
+    <section id="messages-friends" class="tab-content">
+        <h2>💌 Messages from Friends</h2>
+        <h2>💌 Messages from Friends</h2>
+        <div id="friendsWishes" style="">
+            <!-- Guest text wishes will appear here -->
+        </div>
+@@ -189,44 +189,44 @@
+    <?php if ($userRole === 'joy'): ?>
+    <!-- Special Section -->
+    <section id="special" class="tab-content">
+        <h2>✨ All About Joy ✨</h2>
+        <h2>✨ All About Joy ✨</h2>
+
+        <?php if ($userRole === 'admin'): ?>
+        <div class="special-category admin-section">
+            <h3>👑 Admin Dashboard</h3>
+            <h3>👑 Admin Dashboard</h3>
+            <div class="category-content">
+                <div class="card admin-card">
+                    <h4>📊 App Statistics</h4>
+                    <h4>📊 App Statistics</h4>
+                    <p>Total visits: <strong>Many hearts touched</strong></p>
+                    <p>Wishes received: <strong>Countless blessings</strong></p>
+                    <p>Birthday songs played: <strong>Endless celebrations</strong></p>
+                </div>
+                <div class="card admin-card">
+                    <h4>⚙️ Management Tools</h4>
+                    <h4>⚙️ Management Tools</h4>
+                    <p>Monitor app usage and user engagement</p>
+                    <button class="btn btn-secondary" onclick="alert('Admin features coming soon!')">View Analytics</button>
+                </div>
+            </div>
+        </div>
+        <?php elseif ($userRole === 'joy'): ?>
+        <div class="special-category joy-section">
+            <h3>💖 Personal Messages for You, Joy</h3>
+            <h3>💖 Personal Messages for You, Joy</h3>
+            <div class="category-content">
+                <div class="card joy-card">
+                    <p>🎂 <strong>Happy Birthday, Precious Joy!</strong> May this day be filled with as much joy as you bring to others.</p>
+                    <p>🎂 <strong>Happy Birthday, Precious Joy!</strong> May this day be filled with as much joy as you bring to others.</p>
+                </div>
+                <div class="card joy-card">
+                    <p>🙏 Your kindness and positivity inspire everyone around you. Keep shining your light!</p>
+                    <p>🙏 Your kindness and positivity inspire everyone around you. Keep shining your light!</p>
+                </div>
+                <div class="card joy-card">
+                    <p>💖 You are loved, cherished, and truly special. This app was made just for you! 🎉</p>
+                    <p>💖 You are loved, cherished, and truly special. This app was made just for you! 🎉</p>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+
+        <div class="special-category">
+            <h3>🙏 Warm Blessings</h3>
+            <h3>🙏 Warm Blessings</h3>
+            <div class="category-content">
+                <div class="card">
+                    <p>"Trust in yourself with all your heart" - The foundation of Joy's strength</p>
+@@ -241,35 +241,35 @@
+        </div>
+
+        <div class="special-category">
+            <h3>💎 Special Facts About Joy</h3>
+            <h3>💎 Special Facts About Joy</h3>
+            <div class="category-content">
+                <div class="card">📌 You bring joy wherever you go (that's why you're called Joy!)</div>
+                <div class="card">💖 Purple is your color - a symbol of royalty and grace</div>
+                <div class="card">🙌 Your kindness inspires others around you</div>
+                <div class="card">✨ You make the world a better place</div>
+                <div class="card">📌 You bring joy wherever you go (that's why you're called Joy!)</div>
+                <div class="card">💖 Purple is your color - a symbol of royalty and grace</div>
+                <div class="card">🙌 Your kindness inspires others around you</div>
+                <div class="card">✨ You make the world a better place</div>
+            </div>
+        </div>
+
+        <div class="special-category">
+            <h3>😄 Birthday Jokes and Laughs</h3>
+            <h3>😄 Birthday Jokes and Laughs</h3>
+            <div class="category-content">
+                <div class="card" onclick="this.classList.toggle('revealed')">
+                    <strong>Why do we put candles on top of cakes?</strong>
+                    <p class="joke-answer">Because it's too hard to light them from the bottom! 🎂</p>
+                    <p class="joke-answer">Because it's too hard to light them from the bottom! 🎂</p>
+                </div>
+                <div class="card" onclick="this.classList.toggle('revealed')">
+                    <strong>What's special about birthdays?</strong>
+                    <p class="joke-answer">They're the one day a year where you can eat cake for breakfast! 🍰</p>
+                    <p class="joke-answer">They're the one day a year where you can eat cake for breakfast! 🍰</p>
+                </div>
+                <div class="card" onclick="this.classList.toggle('revealed')">
+                    <strong>How do you know if it's Joy's birthday?</strong>
+                    <p class="joke-answer">Everyone around her smiles more! 😊</p>
+                    <p class="joke-answer">Everyone around her smiles more! 😊</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="special-category">
+            <h3>🌟 Birthday Blessing</h3>
+            <h3>🌟 Birthday Blessing</h3>
+            <div class="category-actions">
+                <button class="btn btn-secondary" onclick="showBlessing()">Show blessing</button>
+                <p id="blessingText" class="special-note">A warm birthday blessing will appear here.</p>
+@@ -285,7 +285,7 @@
+    <?php endif; ?>
+
+    <footer class="footer">
+        <p>Made with 💖 for a special birthday celebration</p>
+        <p>Made with 💖 for a special birthday celebration</p>
+        <p class="footer-date" id="dateDisplay"></p>
+    </footer>
+
+0 commit comments
+Comments
+0
+ (0)
+Comment
+You're not receiving notifications from this thread.
+
