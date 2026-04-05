@@ -1,0 +1,7 @@
+[2026-04-05 18:51:37] Email: baloyinwayitelo6@gmail.com | Code: F9951F
+[2026-04-05 18:55:32] Email: baloyinwayitelo6@gmail.com | Code: 3DF1D1
+[2026-04-05 18:57:17] Email: baloyinwayitelo6@gmail.com | Code: D913DF
+[2026-04-05 18:58:02] Email: baloyinwayitelo6@gmail.com | Code: 34ECD7
+[2026-04-05 19:10:21] Status: FAILED | Email: baloyinwayitelo6@gmail.com | Code: FC30BC | Details: PHP mail() is still using the default XAMPP SMTP settings (localhost:25), so no real mail server is configured.
+[2026-04-05 19:11:56] Status: FAILED | Email: baloyinwayitelo6@gmail.com | Code: 088070 | Details: PHP mail() is still using the default XAMPP SMTP settings (localhost:25), so no real mail server is configured.
+[2026-04-05 19:15:23] Status: FAILED | Email: baloyinwayitelo6@gmail.com | Code: 750BBF | Details: PHP mail() is still using the default XAMPP SMTP settings (localhost:25), so no real mail server is configured.

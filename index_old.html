@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Joy! 🎉</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="confetti-container"></div>
+
+    <header class="hero">
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <span class="eyebrow">Birthday Celebration</span>
+                <h1>Happy Birthday, Precious Joy</h1>
+                <p class="hero-subtitle">A warm celebration for Precious Lethabo Mateta — filled with memories, love, and church blessings.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-play" onclick="playSong()">🎵 Play Birthday Song</button>
+                    <button class="btn btn-confetti" onclick="triggerConfetti()">✨ Celebrate!</button>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="hero-card-top">
+                    <div class="hero-avatar">J</div>
+                    <div class="hero-profile-text">
+                        <p class="hero-name">Precious Lethabo Mateta</p>
+                        <p class="hero-role">Beloved friend in church • April 27 birthday</p>
+                    </div>
+                </div>
+                <div class="countdown-container">
+                    <div class="countdown-header">
+                        <p class="countdown-label">Birthday countdown</p>
+                        <p class="birthday-date">April 27</p>
+                    </div>
+                    <div class="countdown-timer">
+                        <div class="time-unit">
+                            <span class="time-value" id="days">0</span>
+                            <span class="time-label">Days</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-value" id="hours">0</span>
+                            <span class="time-label">Hours</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-value" id="minutes">0</span>
+                            <span class="time-label">Minutes</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-value" id="seconds">0</span>
+                            <span class="time-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation -->
+    <nav class="nav-tabs">
+        <button class="nav-tab active" data-tab="countdown">Countdown</button>
+        <button class="nav-tab" data-tab="gallery">Gallery</button>
+        <button class="nav-tab" data-tab="messages">Wishes</button>
+        <button class="nav-tab" data-tab="special">Special</button>
+    </nav>
+
+    <!-- Countdown Section -->
+    <section id="countdown" class="tab-content active">
+        <div class="countdown-container content-card">
+            <h2>Celebrating You Today! 🌟</h2>
+            <div class="countdown-timer">
+                <div class="time-unit">
+                    <span class="time-value" id="days">0</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="hours">0</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="minutes">0</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="seconds">0</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="tab-content">
+        <h2>Precious Memories 📸</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <div class="placeholder-image">
+                    <span>✨ Your Photo ✨</span>
+                </div>
+                <p>Add your favorite photo here</p>
+            </div>
+            <div class="gallery-item">
+                <div class="placeholder-image purple-2">
+                    <span>🙏 Faith & Grace</span>
+                </div>
+                <p>God's blessing in your life</p>
+            </div>
+            <div class="gallery-item">
+                <div class="placeholder-image purple-3">
+                    <span>💜 Cherished Moments</span>
+                </div>
+                <p>Beautiful memories with loved ones</p>
+            </div>
+            <div class="gallery-item">
+                <div class="placeholder-image purple-4">
+                    <span>🌸 New Beginnings</span>
+                </div>
+                <p>Another year of blessings</p>
+            </div>
+        </div>
+        <div class="gallery-instructions">
+            <p><strong>💡 Tip:</strong> Replace placeholder images by uploading your own photos in the Special section!</p>
+        </div>
+    </section>
+
+    <!-- Messages & Wishes Section -->
+    <section id="messages" class="tab-content">
+        <h2>Birthday Wishes 💜</h2>
+        
+        <div class="wish-input">
+            <textarea id="wishText" placeholder="Write a special message for Joy..." maxlength="500"></textarea>
+            <input type="text" id="wishName" placeholder="Your name" maxlength="50">
+            <button class="btn btn-primary" onclick="addWish()">Send Wish 💌</button>
+        </div>
+
+        <div class="wishes-display" id="wishesDisplay">
+            <!-- Wishes will appear here -->
+        </div>
+    </section>
+
+    <!-- Special Section -->
+    <section id="special" class="tab-content">
+        <h2>✨ All About Joy ✨</h2>
+        
+        <div class="special-category">
+            <h3>🙏 Spiritual Blessings</h3>
+            <div class="category-content">
+                <div class="card">
+                    <p>"Trust in the Lord with all your heart" - The foundation of Joy's faith</p>
+                </div>
+                <div class="card">
+                    <p>May this year be filled with God's abundant grace and blessings</p>
+                </div>
+                <div class="card">
+                    <p>Your kindness and service in church is a blessing to many</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="special-category">
+            <h3>💎 Special Facts About Joy</h3>
+            <div class="category-content">
+                <div class="card">📌 You bring joy wherever you go (that's why you're called Joy!)</div>
+                <div class="card">💜 Purple is your color - a symbol of royalty & grace</div>
+                <div class="card">🙌 Your faith inspires others around you</div>
+                <div class="card">✨ You make the world a better place</div>
+            </div>
+        </div>
+
+        <div class="special-category">
+            <h3>😄 Birthday Jokes & Laughs</h3>
+            <div class="category-content">
+                <div class="card" onclick="this.classList.toggle('revealed')">
+                    <strong>Why do we put candles on top of cakes?</strong>
+                    <p class="joke-answer">Because it's too hard to light them from the bottom! 🎂</p>
+                </div>
+                <div class="card" onclick="this.classList.toggle('revealed')">
+                    <strong>What's special about birthdays?</strong>
+                    <p class="joke-answer">They're the one day a year where you can eat cake for breakfast! 🍰</p>
+                </div>
+                <div class="card" onclick="this.classList.toggle('revealed')">
+                    <strong>How do you know if it's Joy's birthday?</strong>
+                    <p class="joke-answer">Everyone around her smiles more! 😊</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="special-category">
+            <h3>🎁 Gift Ideas</h3>
+            <div class="category-actions">
+                <button class="btn btn-secondary" onclick="generateGiftIdea()">Get a gift idea</button>
+                <p id="giftIdea" class="special-note">Need inspiration for Joy? Tap the button to reveal a thoughtful suggestion.</p>
+            </div>
+        </div>
+
+        <div class="special-category">
+            <h3>🌟 Birthday Blessing</h3>
+            <div class="category-actions">
+                <button class="btn btn-secondary" onclick="showBlessing()">Show blessing</button>
+                <p id="blessingText" class="special-note">A warm birthday blessing will appear here.</p>
+            </div>
+        </div>
+
+        <div class="special-category">
+            <h3>📬 Open When...</h3>
+            <div class="envelopes-container">
+                <div class="envelope-card" onclick="toggleEnvelope(this)">
+                    <div class="envelope-front">
+                        <span class="envelope-icon">✉️</span>
+                        <span class="envelope-text">Open when you're sad</span>
+                    </div>
+                    <div class="envelope-back">
+                        <button class="close-envelope" onclick="closeEnvelope(event)">✕</button>
+                        <p>When you feel down, remember you are cherished and strong. Your faith, love, and kindness shine through every moment. 💜</p>
+                    </div>
+                </div>
+                <div class="envelope-card" onclick="toggleEnvelope(this)">
+                    <div class="envelope-front">
+                        <span class="envelope-icon">✉️</span>
+                        <span class="envelope-text">Open when you miss me</span>
+                    </div>
+                    <div class="envelope-back">
+                        <button class="close-envelope" onclick="closeEnvelope(event)">✕</button>
+                        <p>Even when we are apart, I carry you in my heart. Every memory with you is a light that warms my days. 🌷</p>
+                    </div>
+                </div>
+                <div class="envelope-card" onclick="toggleEnvelope(this)">
+                    <div class="envelope-front">
+                        <span class="envelope-icon">🎂</span>
+                        <span class="envelope-text">Open on your birthday</span>
+                    </div>
+                    <div class="envelope-back">
+                        <button class="close-envelope" onclick="closeEnvelope(event)">✕</button>
+                        <p>Happy Birthday, Joy! You are a blessing to everyone around you. May this year overflow with grace, joy, and beautiful surprises. 🎉</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="special-category">
+            <h3>📸 Add Your Photos</h3>
+            <div class="photo-upload">
+                <input type="file" id="photoInput" accept="image/*" onchange="previewPhoto(event)">
+                <label for="photoInput" class="upload-label">📷 Click to Add Photos</label>
+                <div id="photoPreview" class="photo-preview"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Element -->
+    <audio id="birthdaySong" src="birthday_song_eric_lloyd.mp3"></audio>
+
+    <footer class="footer">
+        <p>Made with 💜 for a special birthday celebration</p>
+        <p class="footer-date" id="dateDisplay"></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
